@@ -722,6 +722,10 @@ conjunction[expr_ty] (memo):
 
 inversion[expr_ty] (memo):
     | 'not' a=inversion { _PyAST_UnaryOp(Not, a, EXTRA) }
+    | pipe
+
+pipe[expr_ty]:
+    | a=expression '|>' b=pipe { _PyAST_BinOp(a, Pipe, b, EXTRA) }
     | comparison
 
 # Comparison operators

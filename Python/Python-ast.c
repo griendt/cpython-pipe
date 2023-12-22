@@ -4988,6 +4988,8 @@ PyObject* ast2obj_operator(struct ast_state *state, operator_ty o)
             return Py_NewRef(state->BitAnd_singleton);
         case FloorDiv:
             return Py_NewRef(state->FloorDiv_singleton);
+        case Pipe:
+            return Py_NewRef(state->BinOp_type);
     }
     Py_UNREACHABLE();
 }

@@ -147,6 +147,16 @@ PyObject_LengthHint(PyObject *o, Py_ssize_t defaultvalue)
 }
 
 PyObject *
+PyObject_Pipe(PyObject *o1, PyObject *o2)
+{
+    if (!PyCallable_Check(o2)) {
+        return type_error("Right hand side is not callable", o2);
+    }
+
+    return PyObject_CallOneArg(o2, o1);
+}
+
+PyObject *
 PyObject_GetItem(PyObject *o, PyObject *key)
 {
     if (o == NULL || key == NULL) {

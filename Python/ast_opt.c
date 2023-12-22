@@ -509,6 +509,9 @@ fold_binop(expr_ty node, PyArena *arena, _PyASTOptimizeState *state)
     case BitAnd:
         newval = PyNumber_And(lv, rv);
         break;
+    case Pipe:
+        // newval = PyObject_Pipe(lv, rv);
+        // break;
     // No builtin constants implement the following operators
     case MatMult:
         return 1;

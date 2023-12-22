@@ -3883,7 +3883,7 @@ dummy_func(
             DECREMENT_ADAPTIVE_COUNTER(this_instr[1].cache);
             #endif  /* ENABLE_SPECIALIZATION */
             assert(NB_ADD <= oparg);
-            assert(oparg <= NB_INPLACE_XOR);
+            assert(oparg <= NB_OPARG_LAST);
         }
 
         op(_BINARY_OP, (lhs, rhs -- res)) {

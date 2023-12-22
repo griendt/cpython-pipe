@@ -4121,6 +4121,9 @@ addop_binary(struct compiler *c, location loc, operator_ty binop,
         case FloorDiv:
             oparg = inplace ? NB_INPLACE_FLOOR_DIVIDE : NB_FLOOR_DIVIDE;
             break;
+        case Pipe:
+            oparg = NB_PIPE;
+            break;
         default:
             PyErr_Format(PyExc_SystemError, "%s op %d should not be possible",
                          inplace ? "inplace" : "binary", binop);

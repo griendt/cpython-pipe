@@ -262,6 +262,9 @@ PyAPI_FUNC(PyObject *) PyObject_CallMethodObjArgs(
     PyObject *name,
     ...);
 
+/* The equivalent of the Python expression: o1 |> o2. */
+// PyAPI_FUNC(PyObject *) PyObject_Pipe(PyObject *o1, PyObject *o2);
+
 /* Given a vectorcall nargsf argument, return the actual number of arguments.
  * (For use outside the limited API, this is re-defined as a static inline
  * function in cpython/abstract.h)
@@ -631,6 +634,8 @@ PyAPI_FUNC(PyObject *) PyNumber_InPlaceAnd(PyObject *o1, PyObject *o2);
 
    This is the equivalent of the Python expression: o1 ^= o2. */
 PyAPI_FUNC(PyObject *) PyNumber_InPlaceXor(PyObject *o1, PyObject *o2);
+
+PyAPI_FUNC(PyObject *) PyObject_Pipe(PyObject *o1, PyObject *o2);
 
 /* Returns the result of bitwise or of o1 and o2, possibly in-place,
    or NULL on failure.
